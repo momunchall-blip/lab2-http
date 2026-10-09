@@ -84,11 +84,127 @@ https://user@uni.example:8443/api/v1/students/42?group=IS-21\&sort=asc#grades
 
 
 
-Не отправляется на сервер: фрагмент (#grades). Он обрабатывается
-
-только браузером, например, для прокрутки к нужному месту страницы.
+\## Задание B. Анализ запросов в DevTools
 
 
 
+\### B1. Общая картина (bbc.com)
 
+Число запросов: 328
+
+Передано: 6.3 MB (ресурсов 14.3 MB)
+
+Время загрузки (Finish): 35.31 с
+
+Больше всего запросов типа: ping, затем gif.
+
+Вывод: это аналитика и рекламные трекеры. Сама страница весит
+
+немного, но к сторонним серверам идёт очень много мелких запросов.
+
+Скриншот: screenshots/b1-overview.png
+
+
+
+\### B2-B3. Запрос 1: Document
+
+
+
+URL: https://www.bbc.com/
+
+Метод: GET
+
+Статус: 200 OK
+
+Remote Address: 151.101.192.81:443
+
+
+
+Заголовки запроса:
+
+\- :authority: www.bbc.com
+
+\- Accept: text/html,application/xhtml+xml,...
+
+\- Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+
+\- Accept-Encoding: gzip, deflate, br, zstd
+
+
+
+Заголовки ответа:
+
+\- Cache-Control: private, stale-if-error=90, stale-while-revalidate=30, max-age=0, must-revalidate
+
+\- Content-Encoding: gzip
+
+\- Accept-Ranges: bytes
+
+\- Alt-Svc: h3=":443" (сервер предлагает HTTP/3)
+
+
+
+Cookies (только имена): optimizelyEndUserId, optimizelySession,
+
+ckns\_policy, ckns\_explicit, ckns\_echo\_device\_id
+
+
+
+Тело запроса: нет (GET)
+
+Тело ответа: HTML-код страницы (проверить на вкладке Response)
+
+
+
+Скриншот: screenshots/b2-doc.png
+
+
+
+\### Запрос 2: ресурс (изображение)
+
+
+
+URL: https://ichef.bbci.co.uk/news/320/cpsprodpb/0a5b/live/25d71060-c2fa-11f1-b8c6-6d610e41a5d9.jpg.webp
+
+Метод: GET
+
+Статус: 200 OK
+
+Remote Address: 184.24.144.174:443
+
+
+
+Заголовки запроса:
+
+\- :authority: ichef.bbci.co.uk
+
+\- Accept: image/avif,image/webp,image/apng,image/svg+xml,image/\*,\*/\*;q=0.8
+
+\- Accept-Encoding: gzip, deflate, br, zstd
+
+\- Referer: https://www.bbc.com/
+
+
+
+Заголовки ответа:
+
+\- Content-Type: image/webp
+
+\- Content-Length: 11320
+
+\- Cache-Control: max-age=31536000
+
+\- Access-Control-Allow-Origin: \*
+
+
+
+Cookies: нет (запрос к другому домену, вкладка Cookies пуста)
+
+Тело запроса: нет (GET)
+
+Тело ответа: изображение WebP, около 11 kB (видно на вкладке Preview)
+
+
+
+Скриншот: screenshots/b2-resource.png
 

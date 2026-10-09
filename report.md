@@ -276,3 +276,125 @@ Cookies: ... (только имена, или «нет»)
 
 Вывод: «самый тяжёлый и самый медленный запросы не совпали, потому что время зависит не только от размера, но и от того, как быстро отвечает сервер». 
 
+
+
+\## Задание C. Методы HTTP и статус-коды
+
+
+
+Примечание: при первом запуске команда без ключа -4 завершилась ошибкой
+
+curl: (28) Failed to connect to jsonplaceholder.typicode.com:443 after 21300 ms.
+
+Сервис отвечал нестабильно, поэтому дальше используется ключ -4 (только IPv4).
+
+Диагностика: example.com и httpbin.org в это время отвечали (200 OK).
+
+
+
+\### C1. GET одного ресурса
+
+Команда: curl -4 -i https://jsonplaceholder.typicode.com/posts/1
+
+Статус: 200 OK
+
+Заголовки: Content-Type: application/json; charset=utf-8; Content-Length: 292;
+
+Cache-Control: max-age=43200
+
+Тело: JSON одного поста (userId: 1, id: 1, title, body)
+
+Вывод: сервер вернул запрошенный ресурс в формате JSON.
+
+Скриншот: screenshots/c1-get.png
+
+
+
+\### C2. GET с параметром запроса
+
+Команда: curl -4 -i "https://jsonplaceholder.typicode.com/posts?userId=1"
+
+Статус: 200 OK
+
+Заголовки: Content-Type: application/json; charset=utf-8;
+
+Transfer-Encoding: chunked; Cache-Control: max-age=43200
+
+Тело: JSON-массив постов только пользователя с userId=1 (\[10] шт.)
+
+Вывод: параметр запроса после ? отфильтровал список. В отличие от C1
+
+вернулся массив, а не один объект, а размер не указан (chunked).
+
+
+
+\### C3. GET несуществующего ресурса
+
+Команда: curl -4 -i https://jsonplaceholder.typicode.com/posts/9999
+
+Статус: 404 Not Found
+
+Заголовки: Content-Type: application/json; charset=utf-8; Content-Length: 2;
+
+Cache-Control: max-age=43200
+
+Тело: {} (пустой JSON-объект)
+
+Вывод: поста с id 9999 нет, сервер вернул код 4xx, то есть ошибка на
+
+стороне клиента (запрошен несуществующий адрес), а не сбой сервера.
+
+
+
+\### C4. POST: создание ресурса
+
+Команда: curl -4 -i -X POST -H "Content-Type: application/json" -d @post.json https://jsonplaceholder.typicode.com/posts
+
+Статус: 201 Created
+
+Заголовки: Location: https://jsonplaceholder.typicode.com/posts/101;
+
+Content-Type: application/json; charset=utf-8; Content-Length: 68;
+
+Cache-Control: no-cache
+
+Тело: отправленный JSON (title, body, userId) с добавленным id: 101
+
+Вывод: сервер создал ресурс и вернул 201 с адресом нового ресурса в Location.
+
+Скриншот: screenshots/c4-post.png
+
+
+
+
+
+\### C5. PUT: замена ресурса
+
+Команда: curl -4 -i -X PUT -H "Content-Type: application/json" -d @put.json https://jsonplaceholder.typicode.com/posts/1
+
+Статус: 200 OK
+
+Заголовки: Content-Type: application/json; charset=utf-8; Content-Length: 64;
+
+Cache-Control: no-cache
+
+Тело: {"id":1,"title":"New","body":"Text","userId":1} (ровно то, что отправлено)
+
+Вывод: ресурс заменён целиком новым содержимым.
+
+
+
+\### C6. PATCH: частичное изменение
+
+Команда: curl -4 -i -X PATCH -H "Content-Type: application/json" -d @patch.json https://jsonplaceholder.typicode.com/posts/1
+
+Статус: 200 OK
+
+Заголовки: Content-Type: application/json; charset=utf-8; Content-Length: 225;
+
+Cache-Control: no-cache
+
+Тело: title стал "Updated", остальные поля (userId, id, body) сохранились
+
+Вывод: изменено только присланное поле.
+

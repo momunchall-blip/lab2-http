@@ -41,3 +41,26 @@ tracert example.com
   7     9 ms     2 ms     3 ms  172.66.147.243 
 
 Трассировка завершена.
+curl -4 -i https://jsonplaceholder.typicode.com/posts/1
+curl -4 -i https://jsonplaceholder.typicode.com/posts/1
+curl -4 -i https://httpbin.org/get 
+HTTP/1.1 200 OK
+Date: Sat, 10 Oct 2026 12:34:31 GMT
+Content-Type: application/json
+Content-Length: 256
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/8.21.0", 
+    "X-Amzn-Trace-Id": "Root=1-6aca30d7-6cbed24d50d0346900f58bc8"
+  }, 
+  "origin": "212.112.118.40", 
+  "url": "https://httpbin.org/get"
+}

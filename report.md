@@ -122,7 +122,7 @@ https://user@uni.example:8443/api/v1/students/42?group=IS-21\&sort=asc#grades
 
 немного, но к сторонним серверам идёт очень много мелких запросов.
 
-Скриншот: b1-overview
+Скриншот: ![B1: общий вид](screenshots/b1-overview.png)
 
 
 
@@ -176,7 +176,8 @@ ckns_policy, ckns_explicit, ckns_echo_device_id
 
 
 
-Скриншот: screenshots/b2-doc.png
+Скриншот: ![B2: Document, Response headers](screenshots/b2-doc-response.png)
+          ![B2: Document, Request headers](screenshots/b2-doc-request.png)
 
 
 
@@ -226,7 +227,7 @@ Cookies: нет (запрос к другому домену, вкладка Coo
 
 
 
-Скриншот: screenshots/b2-resource.png
+Скриншот: ![B2: ресурс](screenshots/b2-resource.png)
 
 
 
@@ -276,7 +277,7 @@ Cookies: ... (только имена, или «нет»)
 
 
 
-Скриншот: screenshots/b2-xhr.png
+Скриншот: ![B2: Fetch/XHR](screenshots/b2-xhr.png)
 
 
 
@@ -343,7 +344,7 @@ Cache-Control: max-age=43200
 
 Вывод: сервер вернул запрошенный ресурс в формате JSON.
 
-Скриншот: screenshots/c1-get.png
+Скриншот: ![C1: GET](screenshots/c1-get.png)
 
 
 
@@ -399,7 +400,7 @@ Cache-Control: no-cache
 
 Вывод: сервер создал ресурс и вернул 201 с адресом нового ресурса в Location.
 
-Скриншот: screenshots/c4-post.png
+Скриншот: ![C4: POST](screenshots/c4-post.png)
 
 
 
@@ -479,7 +480,7 @@ Cache-Control: no-cache
 
 останавливается на первом ответе, с -L переходит по нему автоматически.
 
-Скриншот: screenshots/c8-redirect.png
+Скриншот: ![C8: перенаправление](screenshots/c8-redirect.png)
 
 
 
@@ -591,7 +592,7 @@ Chrome/154.0.0.0 Safari/537.36.
 
 статистику.
 
-Скриншот: screenshots/d1-browser-headers.png
+Скриншот: ![D1: заголовки браузера](screenshots/d1-browser-headers.png)
 
 
 
@@ -615,7 +616,8 @@ Chrome/154.0.0.0 Safari/537.36.
 
 cookies ко второму запросу (Cookie).
 
-Скриншоты: screenshots/d2-set-cookie.png, screenshots/d2-cookie.png
+Скриншоты: ![D2: Set-Cookie](screenshots/d2-set-cookie.png)
+           ![D2: Cookie](screenshots/d2-cookie.png)
 
 
 
@@ -645,7 +647,7 @@ SameSite не заданы, поэтому cookie доступна JavaScript, �
 
 пользователя так делать небезопасно.
 
-Скриншот: screenshots/d3-cookies.png
+Скриншот: ![D3: cookies в браузере](screenshots/d3-cookies.png)
 
 
 
@@ -671,7 +673,7 @@ curl добавляет cookie из файла, и сервер её видит.
 
 что клиент сам возвращает cookie при каждом запросе.
 
-Скриншот: screenshots/d4-curl-cookies.png
+Скриншот: ![D4: cookies в curl](screenshots/d4-curl-cookies.png)
 
 
 
@@ -711,7 +713,7 @@ curl добавляет cookie из файла, и сервер её видит.
 
 не сможет подтвердить, что сайт тот, за кого себя выдаёт.
 
-Скриншот: screenshots/e1-certificate.png
+Скриншот: ![E1: сертификат](screenshots/e1-certificate.png)
 
 
 
@@ -747,7 +749,7 @@ Schannel и не печатает детали рукопожатия), но в�
 
 schannel: remote party requests renegotiation, renegotiating SSL/TLS connection, SSL/TLS connection renegotiated
 
-Скриншот: screenshots/e2-http-https.png
+Скриншот: ![E2: HTTP и HTTPS](screenshots/e2-http-https.png)
 
 
 
@@ -773,7 +775,7 @@ Last-Modified: Fri, 09 Oct 2026 11:39:23 GMT
 
 отправил сервер.
 
-Скриншот: screenshots/e3-cache.png
+Скриншот: ![E3: кэш](screenshots/e3-cache.png)
 
 
 
@@ -805,7 +807,7 @@ Cache-Control: max-age=31536000
 
 If-None-Match при этом был отправлен корректно (проверено curl -v).
 
-Скриншот: screenshots/e4-304.png
+Скриншот: ![E4: 304 Not Modified](screenshots/e4-304.png)
 
 
 

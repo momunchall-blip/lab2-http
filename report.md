@@ -246,12 +246,13 @@ Remote Address: 167.235.124.24:443
 
 Заголовки запроса:
 
-\- :authority: stats-collector.cxense.com
-
-\- :method: GET
-
-\- :path: /cr-stats/event/in-screen?...
-
+- :authority: stats-collector.cxense.com
+- :method: GET
+- :path: /cr-stats/event/in-screen?...
+- :scheme: https
+- Origin: https://www.bbc.com
+- Referer: https://www.bbc.com/
+- User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36
 
 
 
@@ -263,7 +264,7 @@ Remote Address: 167.235.124.24:443
 
 \- Access-Control-Allow-Origin: *
 
-\- Server: Jetty(...)
+\- Server: Jetty(ed8b84e0-c35b-11f1-bc2e-018d645d8d2)
 
 
 
@@ -283,7 +284,7 @@ Cookies: нет
 
 Встретились версии: h2 и h3.
 
-Самая долгая стадия в Timing: 232
+Самая долгая стадия в Timing: 232 (Waiting for server response)
 
 
 

@@ -284,7 +284,7 @@ Cookies: нет
 
 Встретились версии: h2 и h3.
 
-Самая долгая стадия в Timing: 232 (Waiting for server response)
+Самая долгая стадия в Timing: 232 mc (Waiting for server response)
 
 
 
@@ -305,7 +305,7 @@ Cookies: нет
 | Status code | 200 OK | 200 OK | 200 OK |
 | Заголовки запроса (3+) | :authority, Accept, Accept-Language, Accept-Encoding | :authority, Accept, Accept-Encoding, Referer | :authority, :method, :path |
 | Заголовки ответа (3+) | Cache-Control, Content-Encoding, Accept-Ranges | Content-Type, Content-Length, Cache-Control | Content-Type, Content-Length, Access-Control-Allow-Origin |
-| Cookies | optimizelyEndUserId, optimizelySession, ckns_policy, ckns_explicit, ckns_echo_device_id | нет | (впишите из вкладки Cookies) |
+| Cookies | optimizelyEndUserId, optimizelySession, ckns_policy, ckns_explicit, ckns_echo_device_id | нет | нет |
 | Тело запроса | нет | нет | нет |
 | Тело ответа | HTML страницы | изображение WebP (~11 kB) | GIF-пиксель (42 байта) |
 

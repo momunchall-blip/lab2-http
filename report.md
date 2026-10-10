@@ -164,7 +164,7 @@ Remote Address: 151.101.192.81:443
 
 
 
-Cookies (только имена): optimizelyEndUserId, optimizelySession,
+Cookies: optimizelyEndUserId, optimizelySession,
 
 ckns_policy, ckns_explicit, ckns_echo_device_id
 
@@ -172,7 +172,6 @@ ckns_policy, ckns_explicit, ckns_echo_device_id
 
 Тело запроса: нет (GET)
 
-Тело ответа: HTML-код страницы (проверить на вкладке Response)
 
 
 
@@ -235,7 +234,7 @@ Cookies: нет (запрос к другому домену, вкладка Coo
 
 
 
-URL: https://stats-collector.cxense.com/cr-stats/event/in-screen?location=... (длинная строка параметров сокращена)
+URL: https://stats-collector.cxense.com/cr-stats/event/in-screen?location=... 
 
 Метод: GET
 
@@ -253,7 +252,6 @@ Remote Address: 167.235.124.24:443
 
 \- :path: /cr-stats/event/in-screen?...
 
-\- ... (добавьте ещё 1-2)
 
 
 
@@ -269,7 +267,7 @@ Remote Address: 167.235.124.24:443
 
 
 
-Cookies: ... (только имена, или «нет»)
+Cookies: нет 
 
 Тело запроса: нет (GET); данные передаются в параметрах адреса (location, pId, ...)
 
@@ -291,9 +289,9 @@ Cookies: ... (только имена, или «нет»)
 
 ### B5. Самый тяжёлый и самый медленный
 
-Самый тяжёлый запрос: ... (имя), 354 kB
+Самый тяжёлый запрос: p0jq6tfl.jpg.webp, 354 kB
 
-Самый медленный запрос: ... (имя), 442 мс
+Самый медленный запрос: event.png?impid=a225275270c44fa2a17324f30f078705&flavor=0&gdpr=0&gdpr_c, 442 мс
 
 Вывод: «самый тяжёлый и самый медленный запросы не совпали, потому что время зависит не только от размера, но и от того, как быстро отвечает сервер».
 

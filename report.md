@@ -122,7 +122,7 @@ https://user@uni.example:8443/api/v1/students/42?group=IS-21\&sort=asc#grades
 
 немного, но к сторонним серверам идёт очень много мелких запросов.
 
-Скриншот: screenshots/b1-overview.png
+Скриншот: b1-overview.png
 
 
 
